@@ -1,5 +1,7 @@
 package be.pxl.ja.streamingservice.controller;
 
+import be.pxl.ja.streamingservice.exception.*;
+import be.pxl.ja.streamingservice.model.*;
 import be.pxl.ja.streamingservice.StreamingService;
 import be.pxl.ja.streamingservice.StreamingServiceFactory;
 import be.pxl.ja.streamingservice.model.StreamingPlan;

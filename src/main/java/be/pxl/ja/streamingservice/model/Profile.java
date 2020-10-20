@@ -46,6 +46,13 @@ public class Profile implements Comparable<Profile>{
         myList.remove(content);
     }
 
+    public boolean isInMyList(Content content) {
+        return myList.contains(content);
+    }
+
+    public boolean allowedToWatch(Content content) {
+        return LocalDate.now().isAfter(dateOfBirth.plusYears(content.getMaturityRating().getMinimumAge()));
+    }
     public void setName(String name) {
         this.name = name;
     }

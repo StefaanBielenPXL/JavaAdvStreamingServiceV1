@@ -13,7 +13,7 @@ public class AccountRepositoryTest {
     }
 
     @Test
-    public void shouldAddAccountToAccountsMap() {
+    public void shouldAddAndFindAccountInAccountsMap() {
         // Arrange
         Account account = new Account("student@pxl.be", "profile1");
 

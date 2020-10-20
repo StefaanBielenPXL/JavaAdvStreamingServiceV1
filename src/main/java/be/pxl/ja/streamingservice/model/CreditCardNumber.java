@@ -21,7 +21,7 @@ public class CreditCardNumber {
 
         this.cardNumber = cardNumber;
         this.cvc = cvc;
-        this.type = getCardType(cardNumber);
+        this.type = getType();
     }
 
     private boolean isNumeric(String cvc) {
@@ -37,12 +37,20 @@ public class CreditCardNumber {
         return text.replaceAll("\\s","");
     }
 
-    private CreditCardType getCardType(String cardNumber) {
+    public CreditCardType getType() {
         if (cardNumber.startsWith("4")) {
             return CreditCardType.VISA;
         } else if (cardNumber.startsWith("5")){
             return CreditCardType.MASTERCARD;
         }
         return null;
+    }
+
+    public String getCvc() {
+        return cvc;
+    }
+
+    public String getNumber() {
+        return cardNumber;
     }
 }

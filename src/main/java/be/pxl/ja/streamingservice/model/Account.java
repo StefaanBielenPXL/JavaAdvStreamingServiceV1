@@ -3,6 +3,7 @@ package be.pxl.ja.streamingservice.model;
 import be.pxl.ja.streamingservice.exception.TooManyProfilesException;
 import be.pxl.ja.streamingservice.util.PasswordUtil;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class Account {
     public Account(String email, String password) {
         setEmail(email);
         setPassword(password);
+        profiles = new ArrayList<>();
         profiles.add(new Profile("profile1"));
         streamingPlan = StreamingPlan.BASIC;
     }
@@ -26,6 +28,10 @@ public class Account {
             throw new TooManyProfilesException("Kan geen profielen meer toevoegen, maximum bereikt.");
         }
         profiles.add(profile);
+    }
+
+    public boolean verifyPassword(String password) {
+        return PasswordUtil.isValid(password, this.password);
     }
 
     public List<Profile> getProfiles() {
@@ -61,4 +67,14 @@ public class Account {
     public PaymentInfo getPaymentInfo() {
         return paymentInfo;
     }
+
+    public void setPaymentInfo(PaymentInfo paymentInfo) {
+        this.paymentInfo = paymentInfo;
+    }
+
+    public void setStreamingPlan(StreamingPlan streamingPlan) {
+        this.streamingPlan = streamingPlan;
+    }
+
+
 }

@@ -4,7 +4,10 @@ import be.pxl.ja.streamingservice.exception.AccountNotFoundException;
 import be.pxl.ja.streamingservice.exception.InvalidPasswordException;
 import be.pxl.ja.streamingservice.model.Content;
 import be.pxl.ja.streamingservice.model.StreamingPlan;
+import be.pxl.ja.streamingservice.model.Account;
 import be.pxl.ja.streamingservice.repository.ContentRepository;
+import be.pxl.ja.streamingservice.repository.AccountRepository;
+
 
 import java.time.LocalDate;
 import java.util.List;
