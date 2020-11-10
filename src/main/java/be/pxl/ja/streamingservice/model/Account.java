@@ -7,12 +7,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//TODO Voorzie ook voldoende unit tests
+
 public class Account {
     public final int MINIMUM_PASSWORD_STRENGTH = 5;
     private String email;
     private String password;
     private PaymentInfo paymentInfo;
     private StreamingPlan streamingPlan;
+
+    //TODO bedoeling is van een HashMap te gebruiken om de profiles bij te houden met als key de naam van de profile (zie ook oefening 4.6)
+    //TODO voorzie ook een getProfile(String name) method om de profile met desbetreffende naam te kunnen opvragen.
     private List<Profile> profiles;
 
     public Account(String email, String password) {

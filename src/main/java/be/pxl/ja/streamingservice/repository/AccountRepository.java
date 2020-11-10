@@ -17,6 +17,8 @@ public class AccountRepository {
     }
 
     public Account findAccount(String email) {
+        //TODO als je de javadoc van de get methode van een HashMap bekijkt kan je volgende lezen "Returns: the value to which the specified key is mapped, or null if this map contains no mapping for the key"
+        // Dit wil dus zeggen dat onderstaande code redundant is.
         if (accounts.containsKey(email)) {
             return accounts.get(email);
         }

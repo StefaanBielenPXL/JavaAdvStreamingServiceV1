@@ -3,10 +3,14 @@ package be.pxl.ja.streamingservice.model;
 import java.time.LocalDate;
 import java.util.Deque;
 
+// TODO: Unit tests schrijven voor alle functionaliteiten
+
 public class Profile implements Comparable<Profile>{
     private String name;
     private LocalDate dateOfBirth;
     private String avatar;
+
+    //TODO: Enkel nodig om vooraan toe te voegen dus Queue volstaat
     private Deque<Content> recentlyWatched;
     private Deque<Content> currentlyWatching;
     private Deque<Content> myList;
@@ -62,6 +66,7 @@ public class Profile implements Comparable<Profile>{
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
+        // TODO controleren of de geboortedatum niet in de toekomst ligt, anders gooi je een InvalidDateException
         this.dateOfBirth = dateOfBirth;
     }
 
